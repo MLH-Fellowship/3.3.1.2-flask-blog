@@ -38,6 +38,7 @@
         <div class="intro-text">
           <div class="Hi">
             <h1>Hi! 👋 &mdash; My name is <span>{{profile_data['name']}}</span>, I'm a <span>{{profile_data['position']}}</span> 👨🏻‍💻 located in {{profile_data['location']}}.</h1> <!-- Insert your text here! -->
+            
           </div>
         </div>
     </section>
@@ -69,9 +70,16 @@
 	
 	
 	<!-- Contact section begins -->
+  
+  
 
   <section class="content contact">
-    <a class="button-slide" href="mailto:{{profile_data['email']}}">
+    <div class="text-center">
+      <img src="{{ url_for('static', filename='img/'+profile_data['image']) }}" class="rounded-circle profile-pic img-frame shadowy" alt="...">
+    </div>
+    <br>
+
+    <a class="button-slide shadowy" href="mailto:{{profile_data['email']}}">
       <span>Talk To Me 👌</span>
     </a>
 	</section>

@@ -6,6 +6,8 @@ from profileInfo import get_profile_data
 
 app = Flask(__name__)
 
+
+
 @app.route('/')
 def index():
     homeData = get_profile_data("data/home.json")
