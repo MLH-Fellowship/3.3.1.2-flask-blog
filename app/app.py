@@ -6,8 +6,6 @@ from profileInfo import get_profile_data
 
 app = Flask(__name__)
 
-
-
 @app.route('/')
 def index():
     homeData = get_profile_data("data/home.json")
@@ -26,5 +24,5 @@ def profile(profile):
                             profile_data=profile_data)
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True, port=5000)
+# if __name__ == '__main__':
+#     app.run()
