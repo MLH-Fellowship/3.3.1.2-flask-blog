@@ -16,7 +16,7 @@ def index():
                            homeData=homeData)
 
 
-@app.route('/profile/<profile>')
+@app.route('/<profile>')
 def profile(profile):
     profile_data = get_profile_data("data/{profile}.json".format(profile=profile))
 
