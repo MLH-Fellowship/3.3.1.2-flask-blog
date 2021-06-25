@@ -1,8 +1,8 @@
 import os
 from flask import Flask, render_template, send_from_directory
 from dotenv import load_dotenv
-from backgrounds import get_random_background
-from profileInfo import get_profile_data
+from .backgrounds import get_random_background
+from .profileInfo import get_profile_data
 
 app = Flask(__name__)
 
@@ -29,4 +29,4 @@ def health():
     return 'Working!'
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)
