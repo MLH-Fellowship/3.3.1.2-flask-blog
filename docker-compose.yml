@@ -1,0 +1,16 @@
+version: "3" # version of docker-compose we want to use
+
+# Use web service image built on docker file in current directory
+services: 
+  web:
+    build: .  # build image from dockerfile inside current dir
+    ports:
+      - "80:80"
+    restart: always
+    # pass environment variables from docker environment
+    env_file:
+      - .env
+    # create volum that 
+    # binds flask.sqlite to the container's sqlite
+    volumes:
+        - ./flask.sqlite:/myportfolio/flask.sqlite
