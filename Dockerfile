@@ -1,0 +1,25 @@
+FROM python:3.8-slim-buster
+
+# Create directory for portfolio app at root of container
+RUN mkdir /myportfolio
+# Copy requirements to application folder
+COPY  requirements.txt /myportfolio 
+# Similar to using 'cd' to a different directory
+WORKDIR /myportfolio
+# Install python dependencies
+
+RUN pip3 install -r requirements.txt
+# Copy all files in this project to container
+COPY . /myportfolio
+CMD ["gunicorn", "wsgi:app", "-w 4", "-b 0.0.0.0:80"]
+
+# Build container
+# $ docker build -t myportfolio:0.0.1 .
+# - Make sure to run this in same directory of Dockerfile
+# - myportfolio = name of Docker image
+# 0.0.1 = tag, not required but recommended
+# . = enables COPY, ADD command to have access to files in current dir
+
+
+# Run container
+# docker run -p 81:80 myportfolio:0.0.1
