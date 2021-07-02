@@ -5,6 +5,10 @@ app_dir = os.path.dirname(__file__) #<-- app directory
 
 def get_profile_data(filename):
     filename = os.path.join(app_dir, filename)
-    with open(filename) as file:
-        data = json.load(file)
-        return data
+    try:
+        with open(filename) as file:
+            data = json.load(file)
+            return data
+
+    except:
+        pass

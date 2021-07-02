@@ -13,7 +13,7 @@ COPY . /myportfolio
 
 # Add a .sh file to run commands instead of running them individually
 RUN chmod u+x ./entrypoint.sh
-CMD ["./entrypoint.sh"]
+ENTRYPOINT ["sh", "./entrypoint.sh"]
 
 # Build container
 # $ docker build -t myportfolio:0.0.1 .
