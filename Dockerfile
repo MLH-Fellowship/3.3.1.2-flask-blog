@@ -7,11 +7,13 @@ COPY  requirements.txt /myportfolio
 # Similar to using 'cd' to a different directory
 WORKDIR /myportfolio
 # Install python dependencies
-
 RUN pip3 install -r requirements.txt
 # Copy all files in this project to container
 COPY . /myportfolio
-CMD ["gunicorn", "wsgi:app", "-w 4", "-b 0.0.0.0:80"]
+
+# Add a .sh file to run commands instead of running them individually
+RUN chmod u+x ./entrypoint.sh
+CMD ["./entrypoint.sh"]
 
 # Build container
 # $ docker build -t myportfolio:0.0.1 .

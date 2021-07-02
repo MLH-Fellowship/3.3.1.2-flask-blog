@@ -13,4 +13,18 @@ services:
     # create volum that 
     # binds flask.sqlite to the container's sqlite
     volumes:
-        - ./flask.sqlite:/myportfolio/flask.sqlite
+      - .:/myportfolio
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+
+
+# We are no longer exposing 5432  but flask is still able 
+# to access the db since both images are in the same network
+# Now web container depends on db, so the first db container
+# is started onle when web container is started
+# 
