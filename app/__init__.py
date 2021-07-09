@@ -100,6 +100,7 @@ def register():
     return render_template('login.html', action_type="register"), 200
 
 
+
 @app.route('/health')
 def health():
     return 'Working!'
