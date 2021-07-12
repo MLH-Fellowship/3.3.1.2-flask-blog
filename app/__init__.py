@@ -111,5 +111,10 @@ def health():
     return "Working!"
 
 
+@app.route("/wflow")
+def workflow():
+    return "Workflow deployment worked!"
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
