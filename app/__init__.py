@@ -7,10 +7,6 @@ from flask_migrate import Migrate
 from .backgrounds import get_random_background
 from .profileInfo import get_profile_data
 
-# from app.db import get_db
-# from . import db
-
-print("test")
 
 app = Flask(__name__)
 app = Flask(__name__)
