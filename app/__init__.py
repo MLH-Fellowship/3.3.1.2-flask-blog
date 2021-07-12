@@ -76,7 +76,7 @@ def login():
         else:
             return error, 418
 
-    ## TODO: Return a login page
+    # TODO: Return a login page
     return render_template("login.html", action_type="login"), 200
 
 
@@ -102,7 +102,7 @@ def register():
         else:
             return error, 418
 
-    ## TODO: Return a restister page
+    # TODO: Return a restister page
     return render_template("login.html", action_type="register"), 200
 
 
