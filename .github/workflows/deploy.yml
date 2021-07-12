@@ -29,4 +29,5 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Print project root directory
-        run: ssh my-vm 'cd $ {{ secrets.PROJECT_DIR }}' && pwd'
+        # run: ssh my-vm 'cd $ {{ secrets.PROJECT_DIR }}' && pwd'
+        run: echo Hello memo
