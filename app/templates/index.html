@@ -5,6 +5,8 @@
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+
 
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -19,7 +21,7 @@
 	<link lang='sass' rel="stylesheet" href="./static/styles/main.css">
 
 
-	<title>Team 3.3.1.2</title>
+	<title>Guillermo's Portfolio</title>
 </head>
 
 <body>
@@ -28,7 +30,7 @@
 
 		<div class="row">
 			<div class="col text-center">
-				<h1 class="text-light">Team 2</h1>
+				<h1 class="text-light">Overview of Guillermo</h1>
 			</div>
 		</div>
 
@@ -45,7 +47,7 @@
 						<h5 class="card-title">{{profile['name']}}</h5>
 						<h6 class="card-subtitle mb-3 text-muted">{{profile['school']}}</h6>
 						<p class="card-text card-text-align mt-4 mb-4">{{profile['bio']}}</p>
-						<a class="btn btn-portfolio text-light rounded-pill" href="profile/{{profile['link']}}" role="button">More about me</a>
+						<a class="btn btn-portfolio text-light rounded-pill" href="/{{profile['link']}}" role="button">More about me</a>
 					</div>
 				</div>
 			</div>

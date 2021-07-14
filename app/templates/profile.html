@@ -38,6 +38,7 @@
         <div class="intro-text">
           <div class="Hi">
             <h1>Hi! 👋 &mdash; My name is <span>{{profile_data['name']}}</span>, I'm a <span>{{profile_data['position']}}</span> 👨🏻‍💻 located in {{profile_data['location']}}.</h1> <!-- Insert your text here! -->
+            
           </div>
         </div>
     </section>
@@ -50,7 +51,7 @@
 
 			<!-- Project Template -->
       {%for project in profile_data['projects']%}
-      <a class="project-item" href="{{project['link']}}" target="_blank">
+      <a class="project-item" href="{{project['link']}}" target=blank>
         <figure class="project-figure">
           <div class="project-overlay"></div>
           <img src="{{project['img']}}">
@@ -69,10 +70,18 @@
 	
 	
 	<!-- Contact section begins -->
+  
+  
 
   <section class="content contact">
-    <a class="button-slide" href="mailto:{{profile_data['email']}}">
-      <span>Talk To Me 👌</span>
+    <div class="text-center">
+      <img src="../static/img/{{ profile_data['image'] }}" class="rounded-circle profile-pic img-frame shadowy" alt="...">
+    </div>
+    <br>
+
+    <a class="btn shadowy" href="{{profile_data['calendly']}}" target=blank>
+      Talk To Me 👌
+
     </a>
 	</section>
 	<!-- Contact section ends-->
@@ -84,13 +93,13 @@
 
       <ul>
         <li>
-          <a href= "{{profile_data['instagram']}}" target="_blank">Instagram</a>
+          <a href= "{{profile_data['instagram']}}" target=blank>Instagram</a>
         </li>
         <li>
-          <a href="{{profile_data['linkedin']}}" target="_blank">LinkedIn</a>
+          <a href="{{profile_data['linkedin']}}" target=blank>LinkedIn</a>
 				</li>
 				<li>
-						<a href="{{profile_data['github']}}" target="_blank">GitHub</a>
+						<a href="{{profile_data['github']}}" target=blank>GitHub</a>
 					</li>
       </ul>
     </div>

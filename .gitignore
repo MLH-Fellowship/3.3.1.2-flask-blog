@@ -4,6 +4,7 @@ __pycache__
 /python3-virtualenv
 *.pyc
 .replit
-.env
 .idea
-run.sh
+flask.sqlite
+
+*.env

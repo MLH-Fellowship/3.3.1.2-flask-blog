@@ -1,0 +1,44 @@
+version: "3" # version of docker-compose we want to use
+
+# Use web service image built on docker file in current directory
+services: 
+  web:
+    build: .  # build image from dockerfile inside current dir
+    restart: always
+    # pass environment variables from docker environment
+    env_file:
+      - .env
+    # create volum that 
+    # binds flask.sqlite to the container's sqlite
+    volumes:
+      - .:/myportfolio
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+  # nginx
+  nginx:
+    image: jonasal/nginx-certbot:latest
+    restart: unless-stopped
+    env_file:
+      - ./nginx-certbot.env
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
+    depends_on:
+      - web
+
+volumes:
+  nginx_secrets:
+
+# We are no longer exposing 5432  but flask is still able 
+# to access the db since both images are in the same network
+# Now web container depends on db, so the first db container
+# is started onle when web container is started
+# 
