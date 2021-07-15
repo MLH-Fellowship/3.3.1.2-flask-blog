@@ -3,6 +3,7 @@ version: "3" # version of docker-compose we want to use
 # Use web service image built on docker file in current directory
 services: 
   web:
+    container_name: web
     build: .  # build image from dockerfile inside current dir
     restart: always
     # pass environment variables from docker environment
@@ -15,12 +16,14 @@ services:
     depends_on:
       - db
   db:
+    container_name: db
     image: postgres
     restart: always
     env_file:
       - .env
   # nginx
   nginx:
+    container_name: nginx
     image: jonasal/nginx-certbot:latest
     restart: unless-stopped
     env_file:
