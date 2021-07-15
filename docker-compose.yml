@@ -4,7 +4,8 @@ version: "3" # version of docker-compose we want to use
 services: 
   web:
     container_name: web
-    build: .  # build image from dockerfile inside current dir
+    # build image from dockerfile inside current dir using "." 
+    build: .  
     restart: always
     # pass environment variables from docker environment
     env_file:
