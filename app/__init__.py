@@ -53,8 +53,8 @@ def index():
 
 @app.route("/<profile>")
 def profile(profile):
-    profile_data = get_profile_data("data/{profile}.json".format(profile=profile))
-
+    file = "data/{profile}.json".format(profile=profile)
+    profile_data = get_profile_data(file)
     return render_template("profile.html", profile_data=profile_data)
 
 
