@@ -14,6 +14,11 @@ Pod 3.3.1 – Team 2 Portfolio
 Portfolio website is the first project we developed as a team for hackaton week at MLH Fellowship. We focused on deliver a simple and clean UX/UI that would look awesome but not take focus on what is important.
 
 Some of the features:
+* Containerized with Docker manage containers using Docker-compose
+* Nginx configuration for routing users to HTTPs
+* Certbot SSL certificate installed
+* Automated testing + deployment workflow using GitHub actions
+* Setup Monitoring for containers using cAdvisor
 * Dynamic animated background effects
 * Template generation based on profile selected
 
@@ -22,8 +27,14 @@ Of course, this is just an initial project that you could modify according to yo
 ### Built With
 
 We use Flask as the main framework combined with Bootsrap 5.
-* [Flask](https://flask.palletsprojects.com)
-* [Bootstrap](https://getbootstrap.com)
+* [cAdvisor](https://github.com/google/cadvisor) – container monitoring
+* [Docker](https://www.docker.com/) – containerized application
+* [Docker-compose](https://docs.docker.com/compose/) – manage multiple containers
+* [GitHub Workflows](https://docs.github.com/en/actions) – automate testing and deployment to AWS ec2 CentOS instance
+* [Nginx](https://www.nginx.com/) – routing for http requests + disable server IP access
+* [Certbot](https://certbot.eff.org/) – ssl certificate
+* [Flask](https://flask.palletsprojects.com) – server 
+* [Bootstrap](https://getbootstrap.com) – css framework
 
 ## Getting Started
 In order to set up your project locally, follow these steps.
