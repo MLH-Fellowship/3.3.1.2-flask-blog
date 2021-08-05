@@ -9,7 +9,7 @@ from .profileInfo import get_profile_data
 
 
 app = Flask(__name__)
-app = Flask(__name__)
+
 app.config[
     "SQLALCHEMY_DATABASE_URI"
 ] = "postgresql+psycopg2://{user}:{passwd}@{host}:{port}/{table}".format(
@@ -104,7 +104,6 @@ def register():
 
     # TODO: Return a restister page
     return render_template("login.html", action_type="register"), 200
-
 
 @app.route("/health")
 def health():
